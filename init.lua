@@ -629,6 +629,10 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        zls = {
+          cmd = { '/usr/local/bin/zls' },
+        },
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -713,6 +717,7 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        zig = { 'zig format' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -834,6 +839,10 @@ require('lazy').setup({
           { name = 'luasnip' },
           { name = 'path' },
         },
+        window = {
+          completion = { border = 'rounded' },
+          documentation = { border = 'rounded' },
+        },
       }
     end,
   },
@@ -894,6 +903,7 @@ require('lazy').setup({
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
+      require('mini.pairs').setup()
     end,
   },
   { -- Highlight, edit, and navigate code
